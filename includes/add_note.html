@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal page</title>
+    <link href="includes/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="info">
+
+        <form action="" method="post">
+            <select>
+                {% for item in user_info %}
+                <option selected>Select</option>
+                <option value="">{{item.name}}</option>
+                {% endfor %}
+            </select>
+            <textarea name="note" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send" name="send">
+        </form>
+        <table class="admin-table" border = '1'>
+            <tr>
+                <td>Имя</td>
+                <td>Заметки</td>
+            </tr>
+            {% for info in more_info %}
+            <tr>
+                <td>{{info.user_name}}</td>
+                <td>{{info.content}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <a class ='exit' href="?exit">EXIT and add another user</a>
+</body>
+</html>
